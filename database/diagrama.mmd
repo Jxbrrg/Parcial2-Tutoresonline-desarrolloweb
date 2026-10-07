@@ -1,0 +1,110 @@
+erDiagram
+    usuarios ||--o| tutores : "rol tutor"
+    usuarios ||--o{ solicitudes : "estudiante"
+    usuarios ||--o{ valoraciones : "emite"
+    usuarios ||--o{ notificaciones : "recibe"
+    tutores ||--o{ tutores_materias : "enseña"
+    materias ||--o{ tutores_materias : "asignada a"
+    niveles_educativos ||--o{ tutores_materias : "nivel"
+    tutores ||--o{ tutores_zonas : "zona presencial"
+    zonas ||--o{ tutores_zonas : "cubierta por"
+    tutores ||--o{ disponibilidad : "publica"
+    tutores ||--o{ solicitudes : "recibe"
+    materias ||--o{ solicitudes : "materia"
+    solicitudes ||--o| sesiones : "genera"
+    sesiones ||--o| valoraciones : "se califica"
+    tutores ||--o{ valoraciones : "recibe"
+    solicitudes ||--o{ notificaciones : "notifica"
+
+    usuarios {
+        int id PK
+        string nombre
+        string email UK
+        string password_hash
+        string telefono
+        string rol "estudiante | tutor | admin"
+        boolean activo
+        datetime creado_en
+    }
+    materias {
+        int id PK
+        string nombre UK
+    }
+    niveles_educativos {
+        int id PK
+        string nombre UK
+    }
+    zonas {
+        int id PK
+        string nombre
+        string ciudad
+    }
+    tutores {
+        int id PK
+        int usuario_id FK
+        text biografia
+        numeric tarifa_hora
+        boolean verificado
+        decimal calificacion_prom
+        string foto_url
+    }
+    tutores_materias {
+        int tutor_id PK
+        int materia_id PK
+        int nivel_id PK
+    }
+    tutores_zonas {
+        int tutor_id PK
+        int zona_id PK
+    }
+    disponibilidad {
+        int id PK
+        int tutor_id FK
+        smallint dia_semana
+        time hora_inicio
+        time hora_fin
+        string modo "virtual | presencial | ambos"
+        boolean activo
+    }
+    solicitudes {
+        int id PK
+        int estudiante_id FK
+        int tutor_id FK
+        int materia_id FK
+        date fecha_sesion
+        time hora_sesion
+        smallint duracion_min
+        string modo "virtual | presencial"
+        string direccion
+        text notas
+        string estado "pendiente | aceptada | rechazada | completada | cancelada"
+        string enlace_video
+        numeric total
+    }
+    sesiones {
+        int id PK
+        int solicitud_id FK
+        datetime iniciada_en
+        datetime finalizada_en
+        text resumen_ia
+    }
+    valoraciones {
+        int id PK
+        int sesion_id FK
+        int estudiante_id FK
+        int tutor_id FK
+        smallint estrellas "1 a 5"
+        text comentario
+        date fecha
+    }
+    notificaciones {
+        int id PK
+        int usuario_id FK
+        int solicitud_id FK
+        string tipo "confirmacion | recordatorio | respuesta | valoracion"
+        string canal "email | whatsapp"
+        string asunto
+        text mensaje
+        string estado "pendiente | enviado | fallido"
+        datetime enviado_en
+    }

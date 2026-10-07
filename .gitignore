@@ -14,3 +14,8 @@ node_modules/
 .vercel/
 
 .vercel
+
+# Informe del parcial (se genera localmente)
+docs/informe-template.html
+docs/parcial2-informe.html
+docs/*.pdf

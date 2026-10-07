@@ -53,5 +53,5 @@ docs/               Contenido del informe del parcial
 Motor: PostgreSQL (relacional)
 
 - `database/schema.sql` - script con las 12 tablas, índices y datos de ejemplo
-- `database/diagrama.dbml` - se pega en https://dbdiagram.io/d para ver y
-  descargar el diagrama en PNG
+- `database/diagrama.png` - diagrama entidad-relación
+- `database/diagrama.dbml` - modelo editable en https://dbdiagram.io/d
