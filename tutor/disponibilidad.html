@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disponibilidad · TutoresOn-Line</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="disponibilidad">
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="../index.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4f46e5"/>
+          <path d="M16 8L4 13l12 5 12-5-12-5z" fill="#fff"/>
+          <path d="M8 15.5V20c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        Tutores<span>On-Line</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../estudiante/busqueda.html">Buscar tutores</a>
+        <a href="../estudiante/mis-sesiones.html">Mis sesiones</a>
+        <a href="../login.html" class="btn btn-outline btn-sm">Salir</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="user-chip">
+        <div class="avatar avatar-sm">LG</div>
+        <div>
+          <strong class="text-sm">Laura Gómez</strong>
+          <small>Tutora verificada</small>
+        </div>
+      </div>
+      <nav>
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="solicitudes.html">📨 Solicitudes <span class="badge badge-warning" style="margin-left:auto">2</span></a>
+        <a href="disponibilidad.html" class="active">🗓 Disponibilidad</a>
+        <a href="../estudiante/perfil-tutor.html">👤 Mi perfil público</a>
+        <a href="../index.html">↩ Salir</a>
+      </nav>
+    </aside>
+
+    <section class="app-content" style="max-width:none">
+      <div class="page-head">
+        <div>
+          <h1>Gestión de disponibilidad</h1>
+          <p>Haz clic en un horario para activarlo o desactivarlo. Los cambios se publican al instante.</p>
+        </div>
+        <div class="d-flex gap-2 text-sm" style="align-items:center">
+          <span class="badge badge-success">Disponible: <strong id="horas-libres">0</strong> h</span>
+          <span class="badge">Total: <strong id="horas-totales">0</strong> h</span>
+        </div>
+      </div>
+
+      <div class="alert alert-info mb-3">
+        <span>💡</span>
+        <span>Los bloques <strong>verdes</strong> están publicados y visibles para los estudiantes. Los grises están desactivados.</span>
+      </div>
+
+      <div class="week-grid mb-3">
+        <div class="day-col" data-dia="Lunes">
+          <h4>Lunes</h4>
+          <button class="slot selected">08:00</button>
+          <button class="slot selected">09:00</button>
+          <button class="slot selected">10:00</button>
+          <button class="slot selected">16:00</button>
+          <button class="slot">17:00</button>
+        </div>
+        <div class="day-col" data-dia="Martes">
+          <h4>Martes</h4>
+          <button class="slot selected">08:00</button>
+          <button class="slot selected">09:00</button>
+          <button class="slot">18:00</button>
+          <button class="slot selected">19:00</button>
+        </div>
+        <div class="day-col" data-dia="Miércoles">
+          <h4>Miércoles</h4>
+          <button class="slot selected">10:00</button>
+          <button class="slot">11:00</button>
+          <button class="slot selected">16:00</button>
+          <button class="slot selected">17:00</button>
+          <button class="slot selected">18:00</button>
+        </div>
+        <div class="day-col" data-dia="Jueves">
+          <h4>Jueves</h4>
+          <button class="slot selected">08:00</button>
+          <button class="slot selected">09:00</button>
+          <button class="slot selected">16:00</button>
+          <button class="slot">17:00</button>
+        </div>
+        <div class="day-col" data-dia="Viernes">
+          <h4>Viernes</h4>
+          <button class="slot selected">14:00</button>
+          <button class="slot selected">15:00</button>
+          <button class="slot selected">16:00</button>
+        </div>
+        <div class="day-col" data-dia="Sábado">
+          <h4>Sábado</h4>
+          <button class="slot selected">09:00</button>
+          <button class="slot selected">10:00</button>
+          <button class="slot selected">11:00</button>
+        </div>
+        <div class="day-col" data-dia="Domingo">
+          <h4>Domingo</h4>
+          <div class="text-xs text-muted">Sin horarios</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="mb-2">➕ Agregar horario rápido</h3>
+        <form id="form-slot" class="d-flex gap-2 flex-wrap" style="align-items:flex-end">
+          <div class="form-group" style="margin:0; min-width:160px">
+            <label for="nuevo-dia">Día</label>
+            <select class="form-control" id="nuevo-dia">
+              <option>Lunes</option>
+              <option>Martes</option>
+              <option>Miércoles</option>
+              <option>Jueves</option>
+              <option>Viernes</option>
+              <option>Sábado</option>
+              <option>Domingo</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin:0; min-width:140px">
+            <label for="nueva-hora">Hora de inicio</label>
+            <input class="form-control" type="time" id="nueva-hora" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Agregar bloque</button>
+        </form>
+      </div>
+
+      <div class="alert alert-success mt-3">
+        <span>📲</span>
+        <span>Cada cambio de disponibilidad se sincroniza con la <strong>búsqueda en tiempo real</strong> de los estudiantes.</span>
+      </div>
+    </section>
+  </div>
+
+  <script src="../js/datos.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

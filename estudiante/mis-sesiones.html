@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis sesiones · TutoresOn-Line</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="mis-sesiones">
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="../index.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4f46e5"/>
+          <path d="M16 8L4 13l12 5 12-5-12-5z" fill="#fff"/>
+          <path d="M8 15.5V20c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        Tutores<span>On-Line</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="busqueda.html">Buscar tutores</a>
+        <a href="mis-sesiones.html" class="active">Mis sesiones</a>
+        <a href="../tutor/dashboard.html">Panel tutor</a>
+        <a href="../login.html" class="btn btn-outline btn-sm">Salir</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container" style="max-width:900px">
+      <div class="page-head">
+        <div>
+          <h1>Mis sesiones</h1>
+          <p>Consulta tus próximas tutorías y tu historial académico.</p>
+        </div>
+        <a href="busqueda.html" class="btn btn-primary">+ Reservar nueva</a>
+      </div>
+
+      <!-- Resumen rápido -->
+      <div class="grid grid-3 mb-3">
+        <div class="stat-card">
+          <div class="icon purple">📅</div>
+          <div><strong>2</strong><span>Próximas sesiones</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="icon green">✅</div>
+          <div><strong>14</strong><span>Sesiones completadas</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="icon amber">⏱</div>
+          <div><strong>18 h</strong><span>Horas estudiadas</span></div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="active" type="button" data-tab="proximas">Próximas</button>
+        <button type="button" data-tab="historial">Historial</button>
+      </div>
+
+      <div id="sesiones-list"></div>
+
+      <div class="alert alert-info mt-3">
+        <span>📩</span>
+        <span>Cada sesión genera un registro que se envía a tu <strong>correo</strong> y <strong>WhatsApp</strong> con fecha, tutor, materia y enlace de videoconferencia.</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0; border-top:none; padding-top:0">
+        <span>© 2026 TutoresOn-Line · Proyecto Final Desarrollo Web</span>
+        <span>Emel Sierra · Jhossuar Barragán · Kevin Arrieta</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/datos.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

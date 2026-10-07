@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservar sesión · TutoresOn-Line</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="reservar">
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="../index.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4f46e5"/>
+          <path d="M16 8L4 13l12 5 12-5-12-5z" fill="#fff"/>
+          <path d="M8 15.5V20c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        Tutores<span>On-Line</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="busqueda.html" class="active">Buscar tutores</a>
+        <a href="mis-sesiones.html">Mis sesiones</a>
+        <a href="../login.html" class="btn btn-outline btn-sm">Salir</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="page-head">
+        <div>
+          <h1>Reservar sesión de tutoría</h1>
+          <p>Completa los datos para confirmar tu reserva</p>
+        </div>
+        <a href="busqueda.html" class="btn btn-ghost btn-sm">← Cambiar tutor</a>
+      </div>
+
+      <!-- Pasos -->
+      <div class="steps">
+        <div class="step active" data-n="1">Elige horario</div>
+        <div class="step active" data-n="2">Modalidad y duración</div>
+        <div class="step" data-n="3">Confirmación</div>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 2fr 1fr; align-items:start">
+        <!-- Formulario -->
+        <div>
+          <div class="card mb-3">
+            <div class="d-flex gap-2" style="align-items:center">
+              <div class="avatar" id="r-iniciales">LG</div>
+              <div>
+                <h3 id="r-nombre">Laura Gómez</h3>
+                <p class="text-sm"><span id="r-precio">$28.000</span> por hora</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <h3>1. Selecciona fecha y hora</h3>
+            <p class="text-sm mt-1 mb-2">Los horarios tachados ya están reservados por otros estudiantes.</p>
+
+            <div class="week-grid">
+              <div class="day-col" data-dia="Lunes">
+                <h4>Lun</h4>
+                <div class="slots"></div>
+              </div>
+              <div class="day-col" data-dia="Martes">
+                <h4>Mar</h4>
+                <div class="slots"></div>
+              </div>
+              <div class="day-col" data-dia="Miércoles">
+                <h4>Mié</h4>
+                <div class="slots"></div>
+              </div>
+              <div class="day-col" data-dia="Jueves">
+                <h4>Jue</h4>
+                <div class="slots"></div>
+              </div>
+              <div class="day-col" data-dia="Viernes">
+                <h4>Vie</h4>
+                <div class="slots"></div>
+              </div>
+              <div class="day-col" data-dia="Sábado">
+                <h4>Sáb</h4>
+                <div class="slots"></div>
+              </div>
+              <div class="day-col" data-dia="Domingo">
+                <h4>Dom</h4>
+                <div class="slots"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <h3>2. Modalidad y detalles</h3>
+
+            <div class="form-group mt-2">
+              <label>Modalidad de la sesión</label>
+              <div class="d-flex gap-2">
+                <label class="chip active" style="flex:1; justify-content:center">
+                  <input type="radio" name="modo" value="Virtual" checked /> 💻 Virtual (videoconferencia)
+                </label>
+                <label class="chip" style="flex:1; justify-content:center">
+                  <input type="radio" name="modo" value="Presencial" /> 📍 Presencial
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dur">Duración</label>
+                <select class="form-control" id="dur">
+                  <option value="60">60 minutos</option>
+                  <option value="90">90 minutos</option>
+                  <option value="120">120 minutos</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="materia-sesion">Materia / tema</label>
+                <select class="form-control" id="materia-sesion">
+                  <option>Matemáticas · Cálculo integral</option>
+                  <option>Matemáticas · Derivadas</option>
+                  <option>Física · Cinemática</option>
+                  <option>Otro tema (indicar en notas)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group d-none" id="campo-direccion">
+              <label for="dir">Dirección para sesión presencial</label>
+              <input class="form-control" type="text" id="dir" placeholder="Calle 123 #45-67, Barrio, Ciudad" />
+            </div>
+
+            <div class="form-group">
+              <label for="notas">Notas para el tutor (opcional)</label>
+              <textarea class="form-control" id="notas" placeholder="Cuéntale al tutor qué tema necesitas reforzar..."></textarea>
+            </div>
+          </div>
+
+          <label class="form-check">
+            <input type="checkbox" required />
+            <span>Acepto la política de cancelación: puedo cancelar sin costo hasta 4 horas antes de la sesión.</span>
+          </label>
+
+          <a href="../comun/confirmacion.html" class="btn btn-primary btn-lg">Confirmar reserva</a>
+        </div>
+
+        <!-- Resumen -->
+        <aside>
+          <div class="summary-card">
+            <h3 class="mb-2">Resumen</h3>
+            <div class="row"><span>Tutor</span><span id="r-nombre-2">Laura Gómez</span></div>
+            <div class="row"><span>Horario</span><span id="s-fecha">Sin seleccionar</span></div>
+            <div class="row"><span>Duración</span><span id="s-duracion">60 minutos</span></div>
+            <div class="row"><span>Modalidad</span><span>Virtual</span></div>
+            <div class="row total"><span>Total</span><span id="s-total">$28.000</span></div>
+          </div>
+
+          <div class="alert alert-info mt-3">
+            <span>📩</span>
+            <span>Al confirmar recibirás el registro de la tutoría por <strong>correo</strong> y <strong>WhatsApp</strong>.</span>
+          </div>
+
+          <div class="alert alert-success mt-2">
+            <span>🤖</span>
+            <span>Tendrás acceso al <strong>asistente con IA</strong> para resolver dudas antes y después de la sesión.</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0; border-top:none; padding-top:0">
+        <span>© 2026 TutoresOn-Line · Proyecto Final Desarrollo Web</span>
+        <span>Emel Sierra · Jhossuar Barragán · Kevin Arrieta</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/datos.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

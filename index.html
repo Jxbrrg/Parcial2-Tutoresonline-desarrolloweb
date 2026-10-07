@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TutoresOn-Line · Plataforma de Tutorías en Línea</title>
+  <meta name="description" content="Conecta con tutores calificados para sesiones virtuales o presenciales. Reserva por materia, nivel y disponibilidad." />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body data-page="inicio">
+
+  <div class="topbar">🎓 Plataforma de tutorías en línea y presencial · Parcial 2 · Desarrollo Web</div>
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4f46e5"/>
+          <path d="M16 8L4 13l12 5 12-5-12-5z" fill="#fff"/>
+          <path d="M8 15.5V20c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        Tutores<span>On-Line</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="nav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="estudiante/busqueda.html">Buscar tutores</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#caracteristicas">Características</a>
+        <a href="login.html" class="btn btn-outline btn-sm">Iniciar sesión</a>
+        <a href="registro.html" class="btn btn-primary btn-sm">Registrarse</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div>
+          <span class="badge badge-primary mb-2">⭐ +2.500 sesiones completadas</span>
+          <h1>Aprende mejor con <span class="accent">tutores expertos</span> a un clic de distancia</h1>
+          <p class="lead">
+            Busca tutores por materia, nivel educativo, zona geográfica y disponibilidad.
+            Reserva tu sesión virtual o presencial y conéctate por videoconferencia integrada.
+          </p>
+          <div class="hero-actions">
+            <a href="estudiante/busqueda.html" class="btn btn-primary btn-lg">Buscar un tutor</a>
+            <a href="registro.html" class="btn btn-outline btn-lg">Quiero ser tutor</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong>320+</strong><span>Tutores verificados</span></div>
+            <div class="stat"><strong>40+</strong><span>Materias disponibles</span></div>
+            <div class="stat"><strong>4.8★</strong><span>Calificación promedio</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="row">
+            <div class="avatar">LG</div>
+            <div>
+              <strong>Laura Gómez</strong>
+              <small>Matemáticas · Física — 4.9★ (128 reseñas)</small>
+            </div>
+            <span class="badge badge-primary" style="margin-left:auto">$28.000/h</span>
+          </div>
+          <div class="row">
+            <div class="avatar">AR</div>
+            <div>
+              <strong>Andrés Ramírez</strong>
+              <small>Programación · Bases de Datos — 4.8★ (96 reseñas)</small>
+            </div>
+            <span class="badge badge-primary" style="margin-left:auto">$35.000/h</span>
+          </div>
+          <div class="row">
+            <div class="avatar">MR</div>
+            <div>
+              <strong>María F. Ruiz</strong>
+              <small>Inglés — 5.0★ (74 reseñas)</small>
+            </div>
+            <span class="badge badge-primary" style="margin-left:auto">$22.000/h</span>
+          </div>
+          <a href="estudiante/busqueda.html" class="btn btn-primary btn-block mt-2">Ver todos los tutores</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section-title">
+          <h2>¿Cómo funciona?</h2>
+          <p>Reserva una sesión de tutoría en solo 3 pasos</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="step-card">
+            <div class="num">1</div>
+            <h3>Busca tu tutor</h3>
+            <p class="mt-1">Filtra por materia, nivel educativo, área geográfica (para sesiones presenciales) y disponibilidad.</p>
+          </div>
+          <div class="step-card">
+            <div class="num">2</div>
+            <h3>Reserva tu horario</h3>
+            <p class="mt-1">Elige la fecha, hora y duración. Recibirás confirmación por correo y WhatsApp con el registro de la tutoría.</p>
+          </div>
+          <div class="step-card">
+            <div class="num">3</div>
+            <h3>Conéctate y aprende</h3>
+            <p class="mt-1">Ingresa a la videoconferencia integrada o acude al encuentro presencial. Al finalizar, califica al tutor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Materias -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Materias más solicitadas</h2>
+          <p>Encuentra ayuda especializada en lo que realmente necesitas</p>
+        </div>
+        <div class="grid grid-4">
+          <a class="subject-card" href="estudiante/busqueda.html"><div class="emoji">📐</div><div><strong>Matemáticas</strong><br><small>128 tutores</small></div></a>
+          <a class="subject-card" href="estudiante/busqueda.html"><div class="emoji">⚛️</div><div><strong>Física</strong><br><small>86 tutores</small></div></a>
+          <a class="subject-card" href="estudiante/busqueda.html"><div class="emoji">🧪</div><div><strong>Química</strong><br><small>74 tutores</small></div></a>
+          <a class="subject-card" href="estudiante/busqueda.html"><div class="emoji">🌍</div><div><strong>Inglés</strong><br><small>112 tutores</small></div></a>
+          <a class="subject-card" href="estudiante/busqueda.html"><div class="emoji">💻</div><div><strong>Programación</strong><br><small>95 tutores</small></div></a>
+          <a class="subject-card" href="estudiante/busqueda.html"><div class="emoji">🗄️</div><div><strong>Bases de Datos</strong><br><small>61 tutores</small></div></a>
+          <a class="subject-card" href="estudiante/busqueda.html"><div class="emoji">📈</div><div><strong>Economía</strong><br><small>47 tutores</small></div></a>
+          <a class="subject-card" href="estudiante/busqueda.html"><div class="emoji">🧭</div><div><strong>Orientación</strong><br><small>39 tutores</small></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Características -->
+    <section class="section" id="caracteristicas">
+      <div class="container">
+        <div class="section-title">
+          <h2>Una plataforma pensada para aprender</h2>
+          <p>Todo lo que necesitas para tu proceso académico en un solo lugar</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card card-hover">
+            <div class="card-title">🎥 Videoconferencia integrada</div>
+            <p class="text-sm mt-1">Sesiones en vivo sin salir de la plataforma, con chat y controles de audio/video.</p>
+          </div>
+          <div class="card card-hover">
+            <div class="card-title">⭐ Sistema de reputación</div>
+            <p class="text-sm mt-1">Los tutores se califican con estrellas y reseñas, como en un marketplace confiable.</p>
+          </div>
+          <div class="card card-hover">
+            <div class="card-title">📩 Notificaciones automáticas</div>
+            <p class="text-sm mt-1">Confirmaciones por correo electrónico y WhatsApp con el registro completo de la tutoría.</p>
+          </div>
+          <div class="card card-hover">
+            <div class="card-title">⚡ Reserva en tiempo real</div>
+            <p class="text-sm mt-1">Solicita un tutor al instante viendo su disponibilidad en vivo, tipo Uber/Rappi.</p>
+          </div>
+          <div class="card card-hover">
+            <div class="card-title">🤖 Asistente con IA</div>
+            <p class="text-sm mt-1">Un chatbot de IA generativa resuelve tus dudas antes y después de cada sesión.</p>
+          </div>
+          <div class="card card-hover">
+            <div class="card-title">📱 Web y móvil</div>
+            <p class="text-sm mt-1">Diseño responsivo: accede desde computador, tablet o celular vía navegador.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-alt">
+      <div class="container text-center">
+        <h2>¿Listo para mejorar tus notas?</h2>
+        <p class="mt-1 mb-3">Regístrate gratis y encuentra al tutor ideal para tu próxima materia.</p>
+        <div class="d-flex gap-2" style="justify-content:center; flex-wrap:wrap">
+          <a href="registro.html" class="btn btn-primary btn-lg">Crear cuenta gratis</a>
+          <a href="estudiante/busqueda.html" class="btn btn-outline btn-lg">Explorar tutores</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Tutores<span style="color:#818cf8">On-Line</span></h4>
+          <p>Plataforma de tutorías en línea y presencial que conecta estudiantes con tutores calificados en diferentes materias y niveles educativos.</p>
+        </div>
+        <div>
+          <h4>Plataforma</h4>
+          <ul>
+            <li><a href="estudiante/busqueda.html">Buscar tutores</a></li>
+            <li><a href="registro.html">Registrarse</a></li>
+            <li><a href="login.html">Iniciar sesión</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Para tutores</h4>
+          <ul>
+            <li><a href="registro.html">Ser tutor</a></li>
+            <li><a href="tutor/dashboard.html">Panel del tutor</a></li>
+            <li><a href="tutor/disponibilidad.html">Gestionar disponibilidad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Proyecto</h4>
+          <ul>
+            <li><a href="#">Repositorio GitHub</a></li>
+            <li><a href="#">Manual de usuario</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 TutoresOn-Line · Proyecto Final Desarrollo Web</span>
+        <span>Emel Sierra · Jhossuar Barragán · Kevin Arrieta</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

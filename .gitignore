@@ -1,0 +1,14 @@
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Dependencias
+node_modules/
+
+# Editors
+.vscode/
+.idea/
+
+# Vercel
+.vercel/

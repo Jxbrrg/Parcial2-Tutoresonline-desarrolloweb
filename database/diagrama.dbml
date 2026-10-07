@@ -1,0 +1,152 @@
+// =============================================================
+// TutoresOn-Line · Diagrama de Base de Datos (DBML)
+// Pegar este archivo en https://dbdiagram.io/d y exportar PNG
+// =============================================================
+
+Enum "rol_usuario" {
+  estudiante
+  tutor
+  admin
+}
+
+Enum "modo_clase" {
+  virtual
+  presencial
+  ambos
+}
+
+Enum "estado_solicitud" {
+  pendiente
+  aceptada
+  rechazada
+  completada
+  cancelada
+}
+
+Enum "canal_notificacion" {
+  email
+  whatsapp
+}
+
+Table usuarios {
+  id integer [pk, increment]
+  nombre varchar(120) [not null]
+  email varchar(160) [not null, unique]
+  password_hash varchar(255) [not null]
+  telefono varchar(20)
+  rol rol_usuario [not null, default: 'estudiante']
+  activo boolean [not null, default: true]
+  creado_en timestamptz [not null, default: `now()`]
+}
+
+Table materias {
+  id integer [pk, increment]
+  nombre varchar(80) [not null, unique]
+}
+
+Table niveles_educativos {
+  id integer [pk, increment]
+  nombre varchar(60) [not null, unique]
+}
+
+Table zonas {
+  id integer [pk, increment]
+  nombre varchar(80) [not null]
+  ciudad varchar(80) [not null]
+}
+
+Table tutores {
+  id integer [pk, increment]
+  usuario_id integer [not null, unique]
+  biografia text
+  tarifa_hora numeric(10,2) [not null]
+  verificado boolean [not null, default: false]
+  calificacion_prom decimal(3,2) [not null, default: 0]
+  foto_url varchar(255)
+  creado_en timestamptz [not null, default: `now()`]
+}
+
+Table tutores_materias {
+  tutor_id integer [not null]
+  materia_id integer [not null]
+  nivel_id integer [not null]
+}
+
+Table tutores_zonas {
+  tutor_id integer [not null]
+  zona_id integer [not null]
+}
+
+Table disponibilidad {
+  id integer [pk, increment]
+  tutor_id integer [not null]
+  dia_semana smallint [not null] // 0=Dom .. 6=Sáb
+  hora_inicio time [not null]
+  hora_fin time [not null]
+  modo modo_clase [not null, default: 'virtual']
+  activo boolean [not null, default: true]
+}
+
+Table solicitudes {
+  id integer [pk, increment]
+  estudiante_id integer [not null]
+  tutor_id integer [not null]
+  materia_id integer [not null]
+  fecha_sesion date [not null]
+  hora_sesion time [not null]
+  duracion_min smallint [not null, default: 60]
+  modo modo_clase [not null]
+  direccion varchar(200)
+  notas text
+  estado estado_solicitud [not null, default: 'pendiente']
+  enlace_video varchar(255)
+  total numeric(10,2) [not null]
+  creado_en timestamptz [not null, default: `now()`]
+}
+
+Table sesiones {
+  id integer [pk, increment]
+  solicitud_id integer [not null, unique]
+  iniciada_en timestamptz
+  finalizada_en timestamptz
+  resumen_ia text
+}
+
+Table valoraciones {
+  id integer [pk, increment]
+  sesion_id integer [not null, unique]
+  estudiante_id integer [not null]
+  tutor_id integer [not null]
+  estrellas smallint [not null]
+  comentario text
+  fecha date [not null, default: `current_date`]
+}
+
+Table notificaciones {
+  id integer [pk, increment]
+  usuario_id integer [not null]
+  solicitud_id integer
+  tipo varchar(25) [not null] // confirmacion, recordatorio, respuesta, valoracion, cancelacion
+  canal canal_notificacion [not null]
+  asunto varchar(150) [not null]
+  mensaje text [not null]
+  estado varchar(10) [not null, default: 'pendiente'] // pendiente, enviado, fallido
+  enviado_en timestamptz
+}
+
+Ref: tutores.usuario_id > usuarios.id
+Ref: tutores_materias.tutor_id > tutores.id
+Ref: tutores_materias.materia_id > materias.id
+Ref: tutores_materias.nivel_id > niveles_educativos.id
+Ref: tutores_zonas.tutor_id > tutores.id
+Ref: tutores_zonas.zona_id > zonas.id
+Ref: disponibilidad.tutor_id > tutores.id
+Ref: solicitudes.estudiante_id > usuarios.id
+Ref: solicitudes.tutor_id > tutores.id
+Ref: solicitudes.materia_id > materias.id
+Ref: sesiones.solicitud_id > solicitudes.id
+Ref: valoraciones.sesion_id > sesiones.id
+Ref: valoraciones.estudiante_id > usuarios.id
+Ref: valoraciones.tutor_id > tutores.id
+Ref: notificaciones.usuario_id > usuarios.id
+Ref: notificaciones.solicitud_id > solicitudes.id

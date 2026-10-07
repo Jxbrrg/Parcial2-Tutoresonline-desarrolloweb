@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión · TutoresOn-Line</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body data-page="login">
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4f46e5"/>
+          <path d="M16 8L4 13l12 5 12-5-12-5z" fill="#fff"/>
+          <path d="M8 15.5V20c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        Tutores<span>On-Line</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="estudiante/busqueda.html">Buscar tutores</a>
+        <a href="registro.html" class="btn btn-primary btn-sm">Crear cuenta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth">
+    <div class="auth-form">
+      <div class="auth-box">
+        <h1>Bienvenido de nuevo 👋</h1>
+        <p>Ingresa a tu cuenta para continuar</p>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input class="form-control" type="email" id="email" placeholder="tucorreo@ejemplo.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="pass">Contraseña</label>
+          <input class="form-control" type="password" id="pass" placeholder="••••••••" />
+        </div>
+
+        <div class="flex-between mb-2" style="font-size:.87rem">
+          <label class="check-row"><input type="checkbox" /> Recordarme</label>
+          <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button class="btn btn-primary btn-block btn-lg" onclick="location.href='estudiante/mis-sesiones.html'">
+          Iniciar sesión
+        </button>
+
+        <p class="text-center text-sm mt-3">
+          ¿Aún no tienes cuenta? <a href="registro.html"><strong>Regístrate gratis</strong></a>
+        </p>
+
+        <div class="alert alert-info mt-3">
+          <span>💡</span>
+          <span>Demo: con cualquier correo y contraseña puedes entrar. Los botones de estudiante/tutor se muestran en el panel.</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="auth-side">
+      <h2>Gestiona tu aprendizaje sin límites</h2>
+      <p>Una sola cuenta para todo el proceso de tutoría:</p>
+      <ul>
+        <li>Busca tutores por materia, nivel, zona y disponibilidad</li>
+        <li>Reserva sesiones virtuales o presenciales en segundos</li>
+        <li>Conéctate por videoconferencia integrada</li>
+        <li>Recibe confirmaciones por correo y WhatsApp</li>
+        <li>Califica a tus tutores y consulta su reputación</li>
+      </ul>
+      <a href="registro.html" class="btn btn-light mt-3" style="align-self:flex-start">Crear cuenta →</a>
+    </aside>
+  </main>
+
+  <script src="js/datos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

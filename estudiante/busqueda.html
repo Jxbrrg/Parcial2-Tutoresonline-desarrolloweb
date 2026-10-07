@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscar tutores · TutoresOn-Line</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="busqueda">
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="../index.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4f46e5"/>
+          <path d="M16 8L4 13l12 5 12-5-12-5z" fill="#fff"/>
+          <path d="M8 15.5V20c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        Tutores<span>On-Line</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="busqueda.html" class="active">Buscar tutores</a>
+        <a href="mis-sesiones.html">Mis sesiones</a>
+        <a href="../tutor/dashboard.html">Panel tutor</a>
+        <a href="../login.html" class="btn btn-outline btn-sm">Salir</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="page-head">
+        <div>
+          <h1>Buscar tutores</h1>
+          <p>Filtra por materia, nivel educativo, área geográfica y disponibilidad.</p>
+        </div>
+        <div class="d-flex gap-1" style="align-items:center">
+          <label class="text-sm text-muted" for="orden">Ordenar por:</label>
+          <select class="form-control" id="orden" style="width:auto">
+            <option value="rating">Mejor calificados</option>
+            <option value="precio-asc">Menor precio</option>
+            <option value="precio-desc">Mayor precio</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="search-layout">
+        <!-- Filtros -->
+        <form class="filters" id="form-filtros">
+          <div class="flex-between">
+            <h3>Filtros</h3>
+            <button type="button" class="btn btn-ghost btn-sm" id="limpiar">Limpiar</button>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title">Materia</label>
+            <label class="check-row"><input type="checkbox" name="materia" value="Matemáticas" /> Matemáticas</label>
+            <label class="check-row"><input type="checkbox" name="materia" value="Física" /> Física</label>
+            <label class="check-row"><input type="checkbox" name="materia" value="Química" /> Química</label>
+            <label class="check-row"><input type="checkbox" name="materia" value="Biología" /> Biología</label>
+            <label class="check-row"><input type="checkbox" name="materia" value="Inglés" /> Inglés</label>
+            <label class="check-row"><input type="checkbox" name="materia" value="Programación" /> Programación</label>
+            <label class="check-row"><input type="checkbox" name="materia" value="Bases de Datos" /> Bases de Datos</label>
+            <label class="check-row"><input type="checkbox" name="materia" value="Economía" /> Economía</label>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title">Nivel educativo</label>
+            <label class="check-row"><input type="checkbox" name="nivel" value="Básico Primaria" /> Básico Primaria</label>
+            <label class="check-row"><input type="checkbox" name="nivel" value="Básico Secundaria" /> Básico Secundaria</label>
+            <label class="check-row"><input type="checkbox" name="nivel" value="Bachillerato" /> Bachillerato</label>
+            <label class="check-row"><input type="checkbox" name="nivel" value="Universitario" /> Universitario</label>
+            <label class="check-row"><input type="checkbox" name="nivel" value="Técnico" /> Técnico</label>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title">Modalidad y verificación</label>
+            <label class="check-row"><input type="checkbox" id="solo-virtual" /> Solo sesiones virtuales</label>
+            <label class="check-row"><input type="checkbox" id="solo-verificados" /> Solo tutores verificados</label>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title">Precio máximo por hora</label>
+            <input class="form-control" type="range" id="precio-max" min="15000" max="40000" step="1000" value="40000" />
+            <p class="text-sm mt-1">Hasta <strong id="precio-valor">$40.000</strong></p>
+          </div>
+
+          <div class="alert alert-info">
+            <span>📍</span>
+            <span>El filtro por <strong>área geográfica</strong> se aplica al elegir "Presencial" en cada tutor (zonas de Bogotá).</span>
+          </div>
+        </form>
+
+        <!-- Resultados -->
+        <section>
+          <div class="flex-between mb-2">
+            <strong id="contador">8 tutores encontrados</strong>
+            <span class="badge badge-primary">Disponibilidad en tiempo real</span>
+          </div>
+
+          <div class="grid grid-2" id="resultados"></div>
+
+          <div class="empty-state card d-none" id="vacio">
+            <div class="icon">🔍</div>
+            <h3>No encontramos tutores con esos filtros</h3>
+            <p class="mt-1">Prueba con menos filtros o amplía el precio máximo.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0; border-top:none; padding-top:0">
+        <span>© 2026 TutoresOn-Line · Proyecto Final Desarrollo Web</span>
+        <span>Emel Sierra · Jhossuar Barragán · Kevin Arrieta</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/datos.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

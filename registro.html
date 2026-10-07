@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear cuenta · TutoresOn-Line</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body data-page="registro">
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4f46e5"/>
+          <path d="M16 8L4 13l12 5 12-5-12-5z" fill="#fff"/>
+          <path d="M8 15.5V20c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        Tutores<span>On-Line</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="estudiante/busqueda.html">Buscar tutores</a>
+        <a href="login.html" class="btn btn-outline btn-sm">Iniciar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth">
+    <div class="auth-form">
+      <div class="auth-box">
+        <h1>Crea tu cuenta 🚀</h1>
+        <p>Elige tu rol y completa tus datos</p>
+
+        <div class="auth-tabs">
+          <button type="button" class="active" data-rol="estudiante">🎓 Soy estudiante</button>
+          <button type="button" data-rol="tutor">🧑‍🏫 Soy tutor</button>
+        </div>
+
+        <form onsubmit="event.preventDefault(); location.href='estudiante/mis-sesiones.html';">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input class="form-control" type="text" id="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="tel">Teléfono / WhatsApp</label>
+              <input class="form-control" type="tel" id="tel" placeholder="+57 300 000 0000" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="correo">Correo electrónico</label>
+            <input class="form-control" type="email" id="correo" placeholder="tucorreo@ejemplo.com" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="clave">Contraseña</label>
+              <input class="form-control" type="password" id="clave" placeholder="Mínimo 8 caracteres" required />
+            </div>
+            <div class="form-group">
+              <label for="clave2">Confirmar contraseña</label>
+              <input class="form-control" type="password" id="clave2" placeholder="Repite tu contraseña" required />
+            </div>
+          </div>
+
+          <div id="campos-tutor" class="d-none">
+            <div class="alert alert-info mb-2">
+              <span>🧑‍🏫</span>
+              <span>Como tutor podrás publicar materias, definir tu tarifa y gestionar tu disponibilidad.</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="materia">Materia principal</label>
+                <select class="form-control" id="materia">
+                  <option>Matemáticas</option>
+                  <option>Física</option>
+                  <option>Química</option>
+                  <option>Biología</option>
+                  <option>Inglés</option>
+                  <option>Programación</option>
+                  <option>Bases de Datos</option>
+                  <option>Economía</option>
+                  <option>Estadística</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tarifa">Tarifa por hora (COP)</label>
+                <input class="form-control" type="number" id="tarifa" placeholder="25000" min="0" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="zona">Zona geográfica (sesiones presenciales)</label>
+              <select class="form-control" id="zona">
+                <option>Chapinero, Bogotá</option>
+                <option>Usaquén, Bogotá</option>
+                <option>Kennedy, Bogotá</option>
+                <option>Suba, Bogotá</option>
+                <option>Teusaquillo, Bogotá</option>
+                <option>Solo virtual</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="form-check">
+            <input type="checkbox" required />
+            <span>Acepto los <a href="#">términos y condiciones</a> y la política de tratamiento de datos personales.</span>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Crear cuenta</button>
+        </form>
+
+        <p class="text-center text-sm mt-3">
+          ¿Ya tienes cuenta? <a href="login.html"><strong>Inicia sesión</strong></a>
+        </p>
+      </div>
+    </div>
+
+    <aside class="auth-side">
+      <h2>Únete a la comunidad</h2>
+      <p> miles de estudiantes y tutores ya usan TutoresOn-Line:</p>
+      <ul>
+        <li>Registro gratuito sin tarjeta de crédito</li>
+        <li>Los tutores pasan un proceso de verificación</li>
+        <li>Pagos seguros y soporte en cada sesión</li>
+        <li>Reputación transparente con reseñas reales</li>
+        <li>Asistente con IA para tus dudas académicas</li>
+      </ul>
+      <a href="estudiante/busqueda.html" class="btn btn-light mt-3" style="align-self:flex-start">Explorar tutores →</a>
+    </aside>
+  </main>
+
+  <script src="js/datos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

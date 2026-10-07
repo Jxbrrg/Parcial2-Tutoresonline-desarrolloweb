@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicitudes · TutoresOn-Line</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="solicitudes">
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="../index.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4f46e5"/>
+          <path d="M16 8L4 13l12 5 12-5-12-5z" fill="#fff"/>
+          <path d="M8 15.5V20c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        Tutores<span>On-Line</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../estudiante/busqueda.html">Buscar tutores</a>
+        <a href="../estudiante/mis-sesiones.html">Mis sesiones</a>
+        <a href="../login.html" class="btn btn-outline btn-sm">Salir</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="user-chip">
+        <div class="avatar avatar-sm">LG</div>
+        <div>
+          <strong class="text-sm">Laura Gómez</strong>
+          <small>Tutora verificada</small>
+        </div>
+      </div>
+      <nav>
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="solicitudes.html" class="active">📨 Solicitudes <span class="badge badge-warning" id="badge-pend" style="margin-left:auto">2</span></a>
+        <a href="disponibilidad.html">🗓 Disponibilidad</a>
+        <a href="../estudiante/perfil-tutor.html">👤 Mi perfil público</a>
+        <a href="../index.html">↩ Salir</a>
+      </nav>
+    </aside>
+
+    <section class="app-content">
+      <div class="page-head">
+        <div>
+          <h1>Solicitudes de tutoría</h1>
+          <p>Acepta o rechaza las peticiones de los estudiantes.</p>
+        </div>
+        <span class="badge badge-warning"><strong id="pendientes">2</strong>&nbsp;pendientes</span>
+      </div>
+
+      <div class="alert alert-info mb-3">
+        <span>⚡</span>
+        <span><strong>Reserva en tiempo real:</strong> cuando un estudiante solicita un tutor inmediato, la solicitud aparece aquí con prioridad y vence en 10 minutos.</span>
+      </div>
+
+      <div id="solicitudes-list"></div>
+
+      <div class="alert alert-success mt-3">
+        <span>📩</span>
+        <span>Al aceptar o rechazar, el estudiante recibe notificación por <strong>correo</strong> y <strong>WhatsApp</strong>.</span>
+      </div>
+    </section>
+  </div>
+
+  <script src="../js/datos.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

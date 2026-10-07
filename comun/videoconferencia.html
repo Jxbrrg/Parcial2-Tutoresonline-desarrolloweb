@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videoconferencia · TutoresOn-Line</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="video">
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="../index.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4f46e5"/>
+          <path d="M16 8L4 13l12 5 12-5-12-5z" fill="#fff"/>
+          <path d="M8 15.5V20c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        Tutores<span>On-Line</span>
+      </a>
+      <nav class="nav">
+        <span class="badge badge-success">● Sesión en vivo</span>
+        <span class="badge badge-primary">Matemáticas · Cálculo integral</span>
+        <a href="../estudiante/mis-sesiones.html" class="btn btn-danger btn-sm">Salir de la sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="video-page">
+    <!-- Escenario de video -->
+    <section class="video-stage">
+      <div class="flex-between" style="color:#cbd5e1">
+        <div>
+          <strong style="color:#fff">Sesión con Laura Gómez</strong>
+          <p class="text-xs" style="color:#94a3b8">🗓 Jueves 15 de octubre · ⏱ 60 min · 🔗 Conexión estable (Jitsi Meet)</p>
+        </div>
+        <span class="badge badge-primary" id="reloj">00:12:35</span>
+      </div>
+
+      <div class="video-grid">
+        <div class="video-tile">
+          <div class="avatar avatar-lg" style="background:#4f46e5;color:#fff">LG</div>
+          <span class="tile-name">Laura Gómez (Tutora)</span>
+        </div>
+        <div class="video-tile">
+          <div class="avatar avatar-lg" style="background:#0ea5e9;color:#fff">TÚ</div>
+          <span class="tile-name">Tú</span>
+        </div>
+      </div>
+
+      <div class="video-controls">
+        <button class="vc-btn on" data-toggle="mic" title="Micrófono">🎤</button>
+        <button class="vc-btn on" data-toggle="cam" title="Cámara">🎥</button>
+        <button class="vc-btn" title="Compartir pantalla">🖥</button>
+        <button class="vc-btn" title="Mano levantada">✋</button>
+        <button class="vc-btn danger" title="Colgar">📞</button>
+      </div>
+
+      <div class="alert" style="background:#1e293b;border-color:#334155;color:#94a3b8">
+        <span>🤖</span>
+        <span>El <strong style="color:#e2e8f0">asistente con IA</strong> está escuchando la sesión para generarte un resumen y próximos pasos al finalizar.</span>
+      </div>
+    </section>
+
+    <!-- Chat lateral -->
+    <aside class="video-chat">
+      <header>💬 Chat de la sesión</header>
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-msg"><small>Laura (Tutora) · 4:02 p. m.</small>Hola 👋 Vamos a revisar las integrales por partes, ¿listo?</div>
+        <div class="chat-msg mine"><small>Tú · 4:03 p. m.</small>Sí, tengo dudas con el paso 2 del ejercicio 4</div>
+        <div class="chat-msg"><small>Laura (Tutora) · 4:05 p. m.</small>Perfecto, comparto la pizarra en pantalla 🖥</div>
+        <div class="chat-msg"><small>Laura (Tutora) · 4:11 p. m.</small>Recuerda aplicar la fórmula de integración por partes: ∫u·dv = u·v − ∫v·du</div>
+      </div>
+      <form class="chat-input" id="chat-form">
+        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." autocomplete="off" />
+        <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+      </form>
+    </aside>
+  </main>
+
+  <script src="../js/datos.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    let seg = 755;
+    setInterval(() => {
+      seg++;
+      const h = String(Math.floor(seg / 3600)).padStart(2, '0');
+      const m = String(Math.floor((seg % 3600) / 60)).padStart(2, '0');
+      const s = String(seg % 60).padStart(2, '0');
+      document.getElementById('reloj').textContent = `${h}:${m}:${s}`;
+    }, 1000);
+  </script>
+</body>
+</html>

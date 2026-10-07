@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel del tutor · TutoresOn-Line</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="dashboard">
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="../index.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4f46e5"/>
+          <path d="M16 8L4 13l12 5 12-5-12-5z" fill="#fff"/>
+          <path d="M8 15.5V20c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        Tutores<span>On-Line</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../estudiante/busqueda.html">Buscar tutores</a>
+        <a href="../estudiante/mis-sesiones.html">Mis sesiones</a>
+        <a href="../login.html" class="btn btn-outline btn-sm">Salir</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="user-chip">
+        <div class="avatar avatar-sm">LG</div>
+        <div>
+          <strong class="text-sm">Laura Gómez</strong>
+          <small>Tutora verificada</small>
+        </div>
+      </div>
+      <nav>
+        <a href="dashboard.html" class="active">📊 Dashboard</a>
+        <a href="solicitudes.html">📨 Solicitudes <span class="badge badge-warning" style="margin-left:auto">2</span></a>
+        <a href="disponibilidad.html">🗓 Disponibilidad</a>
+        <a href="../estudiante/perfil-tutor.html">👤 Mi perfil público</a>
+        <a href="../index.html">↩ Salir</a>
+      </nav>
+    </aside>
+
+    <!-- Contenido -->
+    <section class="app-content">
+      <div class="page-head">
+        <div>
+          <h1>Hola, Laura 👋</h1>
+          <p>Este es el resumen de tu actividad como tutora.</p>
+        </div>
+        <a href="disponibilidad.html" class="btn btn-primary">Gestionar disponibilidad</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-4 mb-3">
+        <div class="stat-card">
+          <div class="icon purple">📨</div>
+          <div><strong>2</strong><span>Solicitudes pendientes</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="icon green">✅</div>
+          <div><strong>86</strong><span>Sesiones completadas</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="icon amber">💰</div>
+          <div><strong>$2.14M</strong><span>Ingresos del mes</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="icon blue">⭐</div>
+          <div><strong>4.9</strong><span>Reputación (128 reseñas)</span></div>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 3fr 2fr; align-items:start">
+        <!-- Solicitudes recientes -->
+        <div class="card">
+          <div class="flex-between mb-2">
+            <h3>Solicitudes recientes</h3>
+            <a href="solicitudes.html" class="text-sm">Ver todas →</a>
+          </div>
+
+          <div class="d-flex gap-2 mb-2" style="align-items:center; border-bottom:1px solid var(--border); padding-bottom:14px">
+            <div class="avatar avatar-sm">AP</div>
+            <div style="flex:1">
+              <strong class="text-sm">Andrés Palacios</strong>
+              <p class="text-xs text-muted">Física · Cinemática — Vie 16 oct, 7:00 p. m. · Virtual</p>
+            </div>
+            <div class="d-flex gap-1">
+              <button class="btn btn-success btn-sm">Aceptar</button>
+              <button class="btn btn-danger btn-sm">Rechazar</button>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mb-2" style="align-items:center; border-bottom:1px solid var(--border); padding-bottom:14px">
+            <div class="avatar avatar-sm">CR</div>
+            <div style="flex:1">
+              <strong class="text-sm">Camila Rojas</strong>
+              <p class="text-xs text-muted">Matemáticas · Derivadas — Sáb 17 oct, 9:00 a. m. · Presencial</p>
+            </div>
+            <div class="d-flex gap-1">
+              <button class="btn btn-success btn-sm">Aceptar</button>
+              <button class="btn btn-danger btn-sm">Rechazar</button>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2" style="align-items:center">
+            <div class="avatar avatar-sm">JN</div>
+            <div style="flex:1">
+              <strong class="text-sm">Jorge Nieto</strong>
+              <p class="text-xs text-muted">Matemáticas · Integrales — Mar 13 oct, 5:00 p. m. · Virtual</p>
+            </div>
+            <span class="badge badge-success">Aceptada</span>
+          </div>
+        </div>
+
+        <!-- Agenda de hoy -->
+        <div>
+          <div class="card mb-3">
+            <h3 class="mb-2">📅 Agenda de hoy</h3>
+            <div class="d-flex gap-2 mb-2" style="align-items:center; background:var(--primary-light); border-radius:var(--radius-sm); padding:12px">
+              <div class="icon" style="background:#fff; border-radius:8px; width:42px; height:42px; display:flex; align-items:center; justify-content:center">🎥</div>
+              <div>
+                <strong class="text-sm">4:00 p. m. — Cálculo integral</strong>
+                <p class="text-xs text-muted">Con Andrés Palacios · Videoconferencia</p>
+              </div>
+            </div>
+            <div class="d-flex gap-2" style="align-items:center; background:var(--success-light); border-radius:var(--radius-sm); padding:12px">
+              <div class="icon" style="background:#fff; border-radius:8px; width:42px; height:42px; display:flex; align-items:center; justify-content:center">📍</div>
+              <div>
+                <strong class="text-sm">6:00 p. m. — Derivadas</strong>
+                <p class="text-xs text-muted">Con Camila Rojas · Presencial (Chapinero)</p>
+              </div>
+            </div>
+            <a href="../comun/videoconferencia.html" class="btn btn-primary btn-block mt-2">Entrar a mi clase</a>
+          </div>
+
+          <div class="card">
+            <h3 class="mb-2">🤖 Asistente con IA</h3>
+            <p class="text-sm">Genera un plan de estudio o resúmenes para tus estudiantes automáticamente.</p>
+            <button class="btn btn-outline btn-block mt-2">Probar asistente</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="../js/datos.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
