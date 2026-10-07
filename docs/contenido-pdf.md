@@ -25,7 +25,7 @@
 
 ### 2. Repositorio de código
 
-**URL del repositorio:** `URL_REPOSITORIO`
+**URL del repositorio:** https://github.com/Jxbrrg/Parcial2-Tutoresonline-desarrolloweb
 
 Contenido del repositorio (HTML, CSS y JS de todas las interfaces):
 
@@ -45,7 +45,7 @@ Contenido del repositorio (HTML, CSS y JS de todas las interfaces):
 
 ### 3. Hosting de la aplicación
 
-**URL del hosting (navegabilidad):** `URL_HOSTING`
+**URL del hosting (navegabilidad):** https://tutores-online-tan.vercel.app
 
 Permite recorrer toda la aplicación: inicio → registro/inicio de sesión →
 búsqueda de tutores con filtros → perfil del tutor → reserva de sesión →
